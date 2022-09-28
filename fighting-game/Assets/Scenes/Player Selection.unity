@@ -1047,7 +1047,7 @@ RectTransform:
   m_GameObject: {fileID: 929889661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 641083776}
@@ -1731,7 +1731,7 @@ VideoPlayer:
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 34b331bba109a644fbefb5ff8fd67e69, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 0275b1324a6ab2247980714b84481e80, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -2696,7 +2696,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692334699}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 91241d6254c8bec40b1799574a347045, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 823d11d79a4201e47a52a0002aba0638, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -2707,7 +2707,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_PlaybackSpeed: 2
+  m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
@@ -2794,7 +2794,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 34b331bba109a644fbefb5ff8fd67e69, type: 2}
+  m_Texture: {fileID: 8400000, guid: 0275b1324a6ab2247980714b84481e80, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
