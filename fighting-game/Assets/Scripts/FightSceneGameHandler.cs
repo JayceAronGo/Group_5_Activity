@@ -16,7 +16,22 @@ public class FightSceneGameHandler : MonoBehaviour
     public VideoClip stance;
 
     bool isLooping = true;
-    public Button p1LP;
+
+    public Button p1SBtn;
+    public Button p1LPBtn;
+    public Button p1HPBtn;
+    public Button p1LKBtn;
+    public Button p1HKBtn;
+    public Button p2SBtn;
+    public Button p2LPBtn;
+    public Button p2HPBtn;
+    public Button p2LKBtn;
+    public Button p2HKBtn;
+
+    void Awake()
+    {
+        isP1Ready();
+    }
 
     void Start()
     {
@@ -51,26 +66,12 @@ public class FightSceneGameHandler : MonoBehaviour
             PlayerScript.p1Health.ToString();
     }
 
-    private void isP1Ready()
-    {
-        if (PlayerScript.isTurnOfP1)
-        {
-            p1LP.interactable = true;
-            PlayerScript.isTurnOfP1 = false;
-        }
-        else
-        {
-            p1LP.interactable = false;
-            PlayerScript.isTurnOfP1 = true;
-        }
-    }
-
     public void changeVideo()
     {
-        fightSceneVideoPlayer.gameObject.GetComponent<VideoPlayer>().isLooping = !isLooping;
-        fightSceneVideoPlayer.gameObject.GetComponent<VideoPlayer>().clip = v2;
-
         PlayerScript.isTurnOfP1 = !PlayerScript.isTurnOfP1;
+        fightSceneVideoPlayer.gameObject.GetComponent<VideoPlayer>().isLooping = !isLooping;
+        disableAllButtons();
+        fightSceneVideoPlayer.gameObject.GetComponent<VideoPlayer>().clip = v2;
         fightSceneVideoPlayer.gameObject.GetComponent<VideoPlayer>().loopPointReached +=
             backToStance;
     }
@@ -78,7 +79,38 @@ public class FightSceneGameHandler : MonoBehaviour
     public void backToStance(VideoPlayer vp)
     {
         fightSceneVideoPlayer.gameObject.GetComponent<VideoPlayer>().isLooping = isLooping;
+        isP1Ready();
         fightSceneVideoPlayer.gameObject.GetComponent<VideoPlayer>().clip = stance;
-        //ditooo  isP1Ready();
+    }
+
+    private void isP1Ready()
+    {
+        if (PlayerScript.isTurnOfP1)
+        {
+            stateOfButtons(true, false);
+        }
+        else
+        {
+            stateOfButtons(false, true);
+        }
+    }
+
+    private void disableAllButtons()
+    {
+        stateOfButtons(false, false);
+    }
+
+    private void stateOfButtons(bool p1, bool p2)
+    {
+        p1SBtn.interactable = p1;
+        p1LPBtn.interactable = p1;
+        p1HPBtn.interactable = p1;
+        p1LKBtn.interactable = p1;
+        p1HKBtn.interactable = p1;
+        p2SBtn.interactable = p2;
+        p2LPBtn.interactable = p2;
+        p2HPBtn.interactable = p2;
+        p2LKBtn.interactable = p2;
+        p2HKBtn.interactable = p2;
     }
 }

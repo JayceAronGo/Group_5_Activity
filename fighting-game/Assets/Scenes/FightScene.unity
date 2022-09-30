@@ -174,7 +174,16 @@ MonoBehaviour:
   fightSceneVideoPlayer: {fileID: 536306372}
   v2: {fileID: 32900000, guid: 3464937b7d06d8148a20f20cce541490, type: 3}
   stance: {fileID: 32900000, guid: c68c9ba5178ea564589bde20dad89746, type: 3}
-  p1LP: {fileID: 370191581}
+  p1SBtn: {fileID: 370191581}
+  p1LPBtn: {fileID: 862328883}
+  p1HPBtn: {fileID: 1622690942}
+  p1LKBtn: {fileID: 323224145}
+  p1HKBtn: {fileID: 1463671086}
+  p2SBtn: {fileID: 422292957}
+  p2LPBtn: {fileID: 1960154186}
+  p2HPBtn: {fileID: 1404734752}
+  p2LKBtn: {fileID: 817780945}
+  p2HKBtn: {fileID: 279415921}
 --- !u!1 &248741406
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +754,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 422292958}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 125135940}
+        m_TargetAssemblyTypeName: FightSceneGameHandler, Assembly-CSharp
+        m_MethodName: changeVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &422292958
 MonoBehaviour:
   m_ObjectHideFlags: 0
