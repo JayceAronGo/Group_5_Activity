@@ -9,8 +9,14 @@ public class MenuGameHandler : MonoBehaviour
 
     void Update() { }
 
+    IEnumerator goToPlayerSelection()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(1);
+    }
+
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(goToPlayerSelection());
     }
 }
