@@ -78,4 +78,6 @@ public class SelectionGameHandler : MonoBehaviour
             PlayerScript.p2Name = inputName;
         }
     }
+
+    private void playVideo() { }
 }

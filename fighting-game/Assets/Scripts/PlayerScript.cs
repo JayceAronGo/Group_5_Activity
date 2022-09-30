@@ -13,6 +13,8 @@ public class PlayerScript : MonoBehaviour
     public static int p1Health;
     public static int p2Health;
 
+    public static bool isTurnOfP1 = true;
+
     void Start() { }
 
     void Update() { }
