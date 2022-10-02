@@ -20,6 +20,7 @@ public class SelectionGameHandler : MonoBehaviour
             PlayerScript.gameHealth.ToString();
     }
 
+    // setting health buttons
     public void setHealthTo50()
     {
         setHealth(50);
@@ -45,6 +46,8 @@ public class SelectionGameHandler : MonoBehaviour
         PlayerScript.gameHealth = health;
     }
 
+    // fight
+
     public void fight()
     {
         getP1Name();
@@ -52,6 +55,7 @@ public class SelectionGameHandler : MonoBehaviour
         FightScene();
     }
 
+    // changing scene
     IEnumerator goToFightScene()
     {
         for (float i = 100; i > 0; i--)
@@ -67,6 +71,7 @@ public class SelectionGameHandler : MonoBehaviour
         StartCoroutine(goToFightScene());
     }
 
+    // get names
     private void getP1Name()
     {
         string inputName = p1InputField.GetComponent<TMP_InputField>().text.ToString();
@@ -94,6 +99,4 @@ public class SelectionGameHandler : MonoBehaviour
             PlayerScript.p2Name = inputName;
         }
     }
-
-    private void playVideo() { }
 }

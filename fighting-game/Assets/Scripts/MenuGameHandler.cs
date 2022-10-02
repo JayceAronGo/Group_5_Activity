@@ -11,6 +11,7 @@ public class MenuGameHandler : MonoBehaviour
 
     void Update() { }
 
+    // delay
     IEnumerator goToPlayerSelection()
     {
         for (float i = 100; i > 0; i--)
@@ -21,10 +22,13 @@ public class MenuGameHandler : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    // change scene
     public void StartGame()
     {
         StartCoroutine(goToPlayerSelection());
     }
+
+    // quit
 
     public void quitGame()
     {

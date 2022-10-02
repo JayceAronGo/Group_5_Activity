@@ -36,11 +36,13 @@ public class WinningSceneGameHandler : MonoBehaviour
 
     void Update() { }
 
+    // change scene
     public void getBackToPlayerSelectionScene()
     {
         SceneManager.LoadScene(1);
     }
 
+    // quit
     public void quitGame()
     {
         Application.Quit();

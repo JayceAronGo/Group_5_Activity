@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class FightSceneGameHandler : MonoBehaviour
 {
+    // players added variable
     public GameObject p1HealthText;
     public GameObject p2HealthText;
     public GameObject p1DamageText;
@@ -16,7 +17,6 @@ public class FightSceneGameHandler : MonoBehaviour
     public GameObject p1Name;
     public GameObject p2Name;
     public GameObject fightSceneVideoPlayer;
-    public VideoClip v2;
     public VideoClip stance;
 
     // player 1 moves
@@ -43,6 +43,8 @@ public class FightSceneGameHandler : MonoBehaviour
     public VideoClip p2SpecialVideo;
     public VideoClip p2SpecialMissedVideo;
     private bool isLooping = true;
+
+    // players buttons
     public Button p1SBtn;
     public Button p1LPBtn;
     public Button p1HPBtn;
@@ -143,6 +145,8 @@ public class FightSceneGameHandler : MonoBehaviour
         }
     }
 
+    // buttons logic
+
     private void disableAllButtons()
     {
         stateOfButtons(false, false);
@@ -166,6 +170,8 @@ public class FightSceneGameHandler : MonoBehaviour
         p2LKBtn.interactable = p2;
         p2HKBtn.interactable = p2;
     }
+
+    // players deal damage
 
     private void dealDamageToP2(
         int currentHP,
@@ -217,6 +223,7 @@ public class FightSceneGameHandler : MonoBehaviour
         }
     }
 
+    // players trigger special
     private void p1TriggeringSpecial(float damage, float health)
     {
         if (damage == 3)
