@@ -212,6 +212,8 @@ MonoBehaviour:
   p2TriggerBar: {fileID: 966245963}
   p1TriggerValue: 0
   p2TriggerValue: 0
+  P1RingFire: {fileID: 1793466380}
+  P2RingFire: {fileID: 966245963}
   audioPlayer: {fileID: 251773370}
   koImage: {fileID: 21300000, guid: 6e9ab0eca0dea014a969976f8ecab749, type: 3}
   koImageUI: {fileID: 963497170}

@@ -53,12 +53,16 @@ public class FightSceneGameHandler : MonoBehaviour
     public Button p2HPBtn;
     public Button p2LKBtn;
     public Button p2HKBtn;
+
+    // player's trigger bar
     public GameObject p1TriggerBar;
     public GameObject p2TriggerBar;
     public float p1TriggerValue;
     public float p2TriggerValue;
     private bool p1IsSpecialUsed = false;
     private bool p2IsSpecialUsed = false;
+    public GameObject P1RingFire;
+    public GameObject P2RingFire;
 
     // audio player
     public AudioSource audioPlayer;
@@ -212,19 +216,19 @@ public class FightSceneGameHandler : MonoBehaviour
     {
         if (damage == 3)
         {
-            p1TriggerValue += damage * 1f / health;
+            p1TriggerValue += damage * 2f / health;
         }
         else if (damage == 6)
         {
-            p1TriggerValue += damage * 1.5f / health;
+            p1TriggerValue += damage * 1.8f / health;
         }
         else if (damage == 8)
         {
-            p1TriggerValue += damage * 1f / health;
+            p1TriggerValue += damage * 2f / health;
         }
         else if (damage == 12)
         {
-            p1TriggerValue += damage * 1.5f / health;
+            p1TriggerValue += damage * 1.8f / health;
         }
     }
 
@@ -236,7 +240,7 @@ public class FightSceneGameHandler : MonoBehaviour
         }
         else if (damage == 6)
         {
-            p2TriggerValue += damage * 1.5f / health;
+            p2TriggerValue += damage * 1.8f / health;
         }
         else if (damage == 8)
         {
@@ -244,7 +248,7 @@ public class FightSceneGameHandler : MonoBehaviour
         }
         else if (damage == 12)
         {
-            p2TriggerValue += damage * 1.5f / health;
+            p2TriggerValue += damage * 1.8f / health;
         }
     }
 
@@ -355,7 +359,8 @@ public class FightSceneGameHandler : MonoBehaviour
         whoToAttack();
         disableAllButtons();
         p1IsSpecialUsed = !p1IsSpecialUsed;
-        dealDamageToP2(PlayerScript.p2Health, 25, 90, 0.5f, p1SpecialVideo, p1SpecialMissedVideo);
+        P1RingFire.gameObject.GetComponent<Image>().color = new Color32(255, 255, 225, 0);
+        dealDamageToP2(PlayerScript.p2Health, 25, 90, 0.5f, p1LowPunchVideo, p1LowPunchMissedVideo);
     }
 
     public void p1LowPunch()
@@ -398,7 +403,8 @@ public class FightSceneGameHandler : MonoBehaviour
         whoToAttack();
         disableAllButtons();
         p2IsSpecialUsed = !p2IsSpecialUsed;
-        dealDamageToP1(PlayerScript.p1Health, 25, 90, 0.5f, p2SpecialVideo, p2SpecialMissedVideo);
+        P2RingFire.gameObject.GetComponent<Image>().color = new Color32(255, 255, 225, 0);
+        dealDamageToP1(PlayerScript.p1Health, 25, 90, 0.5f, p2LowPunchVideo, p2LowPunchMissedVideo);
     }
 
     public void p2LowPunch()
