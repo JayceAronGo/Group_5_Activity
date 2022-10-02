@@ -67,17 +67,22 @@ public class FightSceneGameHandler : MonoBehaviour
     // audio player
     public AudioSource audioPlayer;
 
-    // K.O. image
+    // K.O./Fight image
     public Sprite koImage;
     public GameObject koImageUI;
+    public Sprite fightImage;
+    public GameObject fightImageUI;
     public AudioSource koPlayer;
     public AudioClip koClip;
+    public AudioSource fightPlayer;
+    public AudioClip fightClip;
 
     void Awake()
     {
         isP1Ready();
         p1SBtn.interactable = false;
         p2SBtn.interactable = false;
+        showFight();
     }
 
     void Start()
@@ -440,6 +445,27 @@ public class FightSceneGameHandler : MonoBehaviour
         whoToAttack();
         disableAllButtons();
         dealDamageToP1(PlayerScript.p1Health, 12, 45, 0.5f, p2HighKickVideo, p2HighKickMissedVideo);
+    }
+
+    // fight
+
+    private void showFight()
+    {
+        showFightAll();
+        StartCoroutine(delayOnFight());
+    }
+
+    IEnumerator delayOnFight()
+    {
+        yield return new WaitForSeconds(2f);
+        fightImageUI.gameObject.GetComponent<Image>().color = new Color32(255, 255, 225, 0);
+    }
+
+    private void showFightAll()
+    {
+        fightImageUI.gameObject.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+        fightImageUI.gameObject.GetComponent<Image>().sprite = fightImage;
+        fightPlayer.PlayOneShot(fightClip);
     }
 
     //win

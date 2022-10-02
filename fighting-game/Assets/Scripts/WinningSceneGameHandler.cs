@@ -13,15 +13,20 @@ public class WinningSceneGameHandler : MonoBehaviour
     public AudioClip apP1;
     public AudioClip apP2;
 
+    // Display winner
+    public GameObject winnerText;
+
     void Awake()
     {
         if (PlayerScript.p1Health <= 0)
         {
+            winnerText.gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = "player 2";
             vp.clip = vpClipP2;
             audioPlayer.PlayOneShot(apP2);
         }
         else if (PlayerScript.p2Health <= 0)
         {
+            winnerText.gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = "player 1";
             vp.clip = vpClipP1;
             audioPlayer.PlayOneShot(apP1);
         }
