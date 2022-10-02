@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class FightSceneGameHandler : MonoBehaviour
 {
@@ -429,11 +430,19 @@ public class FightSceneGameHandler : MonoBehaviour
     {
         if (PlayerScript.p2Health <= 0)
         {
-            Debug.Log("player 1 win");
+            disableAllButtons();
+            StartCoroutine(goToFightScene(3));
         }
         else if (PlayerScript.p1Health <= 0)
         {
-            Debug.Log("player 2 win");
+            disableAllButtons();
+            StartCoroutine(goToFightScene(3));
         }
+    }
+
+    IEnumerator goToFightScene(int scene)
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(scene);
     }
 }

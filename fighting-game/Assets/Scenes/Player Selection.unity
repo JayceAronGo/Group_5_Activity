@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -381,7 +381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -284, y: -289}
+  m_AnchoredPosition: {x: -227.26999, y: -289}
   m_SizeDelta: {x: 160, y: 46.1604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &428211501
@@ -1164,7 +1164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -345.73, y: -192.69122}
+  m_AnchoredPosition: {x: -289, y: -192.69122}
   m_SizeDelta: {x: 430.8007, y: 39.5768}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1132736682
@@ -1641,7 +1641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -284, y: -239.95139}
+  m_AnchoredPosition: {x: -227.26999, y: -239.95139}
   m_SizeDelta: {x: 160, y: 46.1604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1279491623
@@ -2424,7 +2424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -444, y: -289}
+  m_AnchoredPosition: {x: -387.27, y: -289}
   m_SizeDelta: {x: 160, y: 46.1604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1456741289
@@ -2556,7 +2556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -88, y: -192.69}
+  m_AnchoredPosition: {x: -31.269989, y: -192.69}
   m_SizeDelta: {x: 107.6752, y: 39.577}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633423023
@@ -2933,7 +2933,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -444, y: -239.95139}
+  m_AnchoredPosition: {x: -387.27, y: -239.95139}
   m_SizeDelta: {x: 160, y: 46.1604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1762617453

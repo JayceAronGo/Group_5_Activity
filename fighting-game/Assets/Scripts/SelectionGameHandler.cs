@@ -48,7 +48,18 @@ public class SelectionGameHandler : MonoBehaviour
     {
         getP1Name();
         getP2Name();
+        FightScene();
+    }
+
+    IEnumerator goToFightScene()
+    {
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(2);
+    }
+
+    public void FightScene()
+    {
+        StartCoroutine(goToFightScene());
     }
 
     private void getP1Name()
