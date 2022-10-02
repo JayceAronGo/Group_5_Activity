@@ -25,4 +25,9 @@ public class MenuGameHandler : MonoBehaviour
     {
         StartCoroutine(goToPlayerSelection());
     }
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }
