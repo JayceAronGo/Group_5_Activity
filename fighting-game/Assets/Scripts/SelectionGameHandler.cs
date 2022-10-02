@@ -58,11 +58,11 @@ public class SelectionGameHandler : MonoBehaviour
     // changing scene
     IEnumerator goToFightScene()
     {
+        yield return new WaitForSeconds(0.5f);
         for (float i = 100; i > 0; i--)
         {
             audioPlayer.volume = i / 100;
         }
-        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(2);
     }
 

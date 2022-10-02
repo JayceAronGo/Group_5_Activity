@@ -39,6 +39,12 @@ public class WinningSceneGameHandler : MonoBehaviour
     // change scene
     public void getBackToPlayerSelectionScene()
     {
+        StartCoroutine(goToPlayerSelectionScene());
+    }
+
+    IEnumerator goToPlayerSelectionScene()
+    {
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(1);
     }
 

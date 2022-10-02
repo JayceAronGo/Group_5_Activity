@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuGameHandler : MonoBehaviour
 {
-    public AudioSource audioPlayer;
+    public static AudioSource audioPlayer;
 
     void Start() { }
 
@@ -14,11 +14,7 @@ public class MenuGameHandler : MonoBehaviour
     // delay
     IEnumerator goToPlayerSelection()
     {
-        for (float i = 100; i > 0; i--)
-        {
-            audioPlayer.volume = i / 100;
-        }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(1);
     }
 

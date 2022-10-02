@@ -29,7 +29,6 @@ public class FightSceneGameHandler : MonoBehaviour
     public VideoClip p1HighKickVideo;
     public VideoClip p1HighKickMissedVideo;
     public VideoClip p1SpecialVideo;
-    public VideoClip p1SpecialMissedVideo;
 
     // player 2 moves
     public VideoClip p2LowPunchVideo;
@@ -41,7 +40,6 @@ public class FightSceneGameHandler : MonoBehaviour
     public VideoClip p2HighKickVideo;
     public VideoClip p2HighKickMissedVideo;
     public VideoClip p2SpecialVideo;
-    public VideoClip p2SpecialMissedVideo;
     private bool isLooping = true;
 
     // players buttons
@@ -70,6 +68,7 @@ public class FightSceneGameHandler : MonoBehaviour
     public AudioSource audioPlayer;
 
     // K.O./Fight image
+    public float lastAttack;
     public Sprite koImage;
     public GameObject koImageUI;
     public Sprite fightImage;
@@ -96,6 +95,7 @@ public class FightSceneGameHandler : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(lastAttack);
         setSpecialBar();
         p1LockSpecialButton();
         p2LockSpecialButton();
@@ -182,6 +182,7 @@ public class FightSceneGameHandler : MonoBehaviour
         VideoClip missedAttackVideo
     )
     {
+        lastAttackDone(duration);
         int randomValue = Random.Range(0, 101);
         if (randomValue <= accuracy)
         {
@@ -207,6 +208,7 @@ public class FightSceneGameHandler : MonoBehaviour
         VideoClip missedAttackVideo
     )
     {
+        lastAttackDone(duration);
         int randomValue = Random.Range(0, 101);
         if (randomValue <= accuracy)
         {
@@ -372,7 +374,7 @@ public class FightSceneGameHandler : MonoBehaviour
         disableAllButtons();
         p1IsSpecialUsed = !p1IsSpecialUsed;
         P1RingFire.gameObject.GetComponent<Image>().color = new Color32(255, 255, 225, 0);
-        dealDamageToP2(PlayerScript.p2Health, 25, 90, 0.5f, p1LowPunchVideo, p1LowPunchMissedVideo);
+        dealDamageToP2(PlayerScript.p2Health, 25, 100, 3f, p1SpecialVideo, null);
     }
 
     public void p1LowPunch()
@@ -493,9 +495,14 @@ public class FightSceneGameHandler : MonoBehaviour
         StartCoroutine(delayOnKo());
     }
 
+    private void lastAttackDone(float duration)
+    {
+        lastAttack = duration;
+    }
+
     IEnumerator delayOnKo()
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(lastAttack);
         koImageUI.gameObject.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
         koImageUI.gameObject.GetComponent<Image>().sprite = koImage;
         koPlayer.PlayOneShot(koClip);
@@ -503,11 +510,11 @@ public class FightSceneGameHandler : MonoBehaviour
 
     IEnumerator goToWinningScene(int scene)
     {
+        yield return new WaitForSeconds(lastAttack + 5f);
         for (float i = 100; i > 0; i--)
         {
             audioPlayer.volume = i / 100;
         }
-        yield return new WaitForSeconds(6f);
         SceneManager.LoadScene(scene);
     }
 }

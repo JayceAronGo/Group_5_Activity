@@ -304,7 +304,6 @@ MonoBehaviour:
   p1Name: {fileID: 699729534}
   p2Name: {fileID: 2013422421}
   fightSceneVideoPlayer: {fileID: 536306372}
-  v2: {fileID: 32900000, guid: 3464937b7d06d8148a20f20cce541490, type: 3}
   stance: {fileID: 32900000, guid: c68c9ba5178ea564589bde20dad89746, type: 3}
   p1LowPunchVideo: {fileID: 32900000, guid: fedf5aceb83864a459eadd933d1793c3, type: 3}
   p1LowPunchMissedVideo: {fileID: 32900000, guid: 61ef159d494c8b844a13b789b8820fe7, type: 3}
@@ -314,8 +313,7 @@ MonoBehaviour:
   p1LowKickMissedVideo: {fileID: 32900000, guid: 3afeeab079998da4aa6af3bc69d046ad, type: 3}
   p1HighKickVideo: {fileID: 32900000, guid: df54abadd75633d48b9c69030785ef2a, type: 3}
   p1HighKickMissedVideo: {fileID: 32900000, guid: b36335f340376114f8717404cee5ccf3, type: 3}
-  p1SpecialVideo: {fileID: 0}
-  p1SpecialMissedVideo: {fileID: 0}
+  p1SpecialVideo: {fileID: 32900000, guid: 3049356c543777a4495c2042c134291b, type: 3}
   p2LowPunchVideo: {fileID: 32900000, guid: a4b59637b4c1d94449a7b879f971f754, type: 3}
   p2LowPunchMissedVideo: {fileID: 32900000, guid: 63f22b1e47a25d6449cb5252555c679b, type: 3}
   p2HighPunchVideo: {fileID: 32900000, guid: 3da2a7dbc337d7c44bb8f0628a5e8cd9, type: 3}
@@ -325,7 +323,6 @@ MonoBehaviour:
   p2HighKickVideo: {fileID: 32900000, guid: d5ae13c5ba1afe143894994152f60c8f, type: 3}
   p2HighKickMissedVideo: {fileID: 32900000, guid: 577c0c53016f68b4c9520da0285fcdf5, type: 3}
   p2SpecialVideo: {fileID: 0}
-  p2SpecialMissedVideo: {fileID: 0}
   p1SBtn: {fileID: 370191581}
   p1LPBtn: {fileID: 862328883}
   p1HPBtn: {fileID: 1622690942}
@@ -343,6 +340,7 @@ MonoBehaviour:
   P1RingFire: {fileID: 1793466380}
   P2RingFire: {fileID: 966245963}
   audioPlayer: {fileID: 251773370}
+  lastAttack: 0
   koImage: {fileID: 21300000, guid: 6e9ab0eca0dea014a969976f8ecab749, type: 3}
   koImageUI: {fileID: 963497170}
   fightImage: {fileID: 21300000, guid: c8a7e8144e0068a4ebc377b0ec21426c, type: 3}
@@ -584,7 +582,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f11ef627e6864454d8462659f0de3ac2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
