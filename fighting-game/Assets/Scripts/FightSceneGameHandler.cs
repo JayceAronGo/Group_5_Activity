@@ -17,10 +17,30 @@ public class FightSceneGameHandler : MonoBehaviour
     public GameObject fightSceneVideoPlayer;
     public VideoClip v2;
     public VideoClip stance;
+
+    // player 1 moves
     public VideoClip p1LowPunchVideo;
     public VideoClip p1LowPunchMissedVideo;
+    public VideoClip p1HighPunchVideo;
+    public VideoClip p1HighPunchMissedVideo;
+    public VideoClip p1LowKickVideo;
+    public VideoClip p1LowKickMissedVideo;
+    public VideoClip p1HighKickVideo;
+    public VideoClip p1HighKickMissedVideo;
+    public VideoClip p1SpecialVideo;
+    public VideoClip p1SpecialMissedVideo;
+
+    // player 2 moves
     public VideoClip p2LowPunchVideo;
     public VideoClip p2LowPunchMissedVideo;
+    public VideoClip p2HighPunchVideo;
+    public VideoClip p2HighPunchMissedVideo;
+    public VideoClip p2LowKickVideo;
+    public VideoClip p2LowKickMissedVideo;
+    public VideoClip p2HighKickVideo;
+    public VideoClip p2HighKickMissedVideo;
+    public VideoClip p2SpecialVideo;
+    public VideoClip p2SpecialMissedVideo;
     private bool isLooping = true;
     public Button p1SBtn;
     public Button p1LPBtn;
@@ -323,7 +343,7 @@ public class FightSceneGameHandler : MonoBehaviour
         whoToAttack();
         disableAllButtons();
         p1IsSpecialUsed = !p1IsSpecialUsed;
-        dealDamageToP2(PlayerScript.p2Health, 25, 90, 0.5f, p1LowPunchVideo, p1LowPunchMissedVideo);
+        dealDamageToP2(PlayerScript.p2Health, 25, 90, 0.5f, p1SpecialVideo, p1SpecialMissedVideo);
     }
 
     public void p1LowPunch()
@@ -337,21 +357,28 @@ public class FightSceneGameHandler : MonoBehaviour
     {
         whoToAttack();
         disableAllButtons();
-        dealDamageToP2(PlayerScript.p2Health, 8, 55, 0.5f, p1LowPunchVideo, p1LowPunchMissedVideo);
+        dealDamageToP2(
+            PlayerScript.p2Health,
+            8,
+            55,
+            0.5f,
+            p1HighPunchVideo,
+            p1HighPunchMissedVideo
+        );
     }
 
     public void p1LowKick()
     {
         whoToAttack();
         disableAllButtons();
-        dealDamageToP2(PlayerScript.p2Health, 6, 65, 0.5f, p1LowPunchVideo, p1LowPunchMissedVideo);
+        dealDamageToP2(PlayerScript.p2Health, 6, 65, 0.5f, p1LowKickVideo, p1LowKickMissedVideo);
     }
 
     public void p1HighKick()
     {
         whoToAttack();
         disableAllButtons();
-        dealDamageToP2(PlayerScript.p2Health, 12, 45, 0.5f, p1LowPunchVideo, p1LowPunchMissedVideo);
+        dealDamageToP2(PlayerScript.p2Health, 12, 45, 0.5f, p1HighKickVideo, p1HighKickMissedVideo);
     }
 
     public void p2Special()
@@ -359,7 +386,7 @@ public class FightSceneGameHandler : MonoBehaviour
         whoToAttack();
         disableAllButtons();
         p2IsSpecialUsed = !p2IsSpecialUsed;
-        dealDamageToP1(PlayerScript.p1Health, 25, 90, 0.5f, p2LowPunchVideo, p1LowPunchMissedVideo);
+        dealDamageToP1(PlayerScript.p1Health, 25, 90, 0.5f, p2SpecialVideo, p2SpecialMissedVideo);
     }
 
     public void p2LowPunch()
@@ -373,21 +400,28 @@ public class FightSceneGameHandler : MonoBehaviour
     {
         whoToAttack();
         disableAllButtons();
-        dealDamageToP1(PlayerScript.p1Health, 8, 55, 0.5f, p2LowPunchVideo, p1LowPunchMissedVideo);
+        dealDamageToP1(
+            PlayerScript.p1Health,
+            8,
+            55,
+            0.5f,
+            p2HighPunchVideo,
+            p2HighPunchMissedVideo
+        );
     }
 
     public void p2LowKick()
     {
         whoToAttack();
         disableAllButtons();
-        dealDamageToP1(PlayerScript.p1Health, 6, 65, 0.5f, p2LowPunchVideo, p1LowPunchMissedVideo);
+        dealDamageToP1(PlayerScript.p1Health, 6, 65, 0.5f, p2LowKickVideo, p2LowKickMissedVideo);
     }
 
     public void p2HighKick()
     {
         whoToAttack();
         disableAllButtons();
-        dealDamageToP1(PlayerScript.p1Health, 12, 45, 0.5f, p2LowPunchVideo, p1LowPunchMissedVideo);
+        dealDamageToP1(PlayerScript.p1Health, 12, 45, 0.5f, p2HighKickVideo, p2HighKickMissedVideo);
     }
 
     //win
