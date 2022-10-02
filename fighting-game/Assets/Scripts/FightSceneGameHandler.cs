@@ -20,6 +20,7 @@ public class FightSceneGameHandler : MonoBehaviour
     public VideoClip p1LowPunchVideo;
     public VideoClip p1LowPunchMissedVideo;
     public VideoClip p2LowPunchVideo;
+    public VideoClip p2LowPunchMissedVideo;
     private bool isLooping = true;
     public Button p1SBtn;
     public Button p1LPBtn;
@@ -350,14 +351,7 @@ public class FightSceneGameHandler : MonoBehaviour
     {
         whoToAttack();
         disableAllButtons();
-        dealDamageToP2(
-            PlayerScript.p2Health,
-            12,
-            100,
-            0.5f,
-            p1LowPunchVideo,
-            p1LowPunchMissedVideo
-        );
+        dealDamageToP2(PlayerScript.p2Health, 12, 45, 0.5f, p1LowPunchVideo, p1LowPunchMissedVideo);
     }
 
     public void p2Special()
@@ -372,7 +366,7 @@ public class FightSceneGameHandler : MonoBehaviour
     {
         whoToAttack();
         disableAllButtons();
-        dealDamageToP1(PlayerScript.p1Health, 3, 75, 0.5f, p2LowPunchVideo, p1LowPunchMissedVideo);
+        dealDamageToP1(PlayerScript.p1Health, 3, 75, 0.5f, p2LowPunchVideo, p2LowPunchMissedVideo);
     }
 
     public void p2HighPunch()
