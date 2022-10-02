@@ -60,6 +60,15 @@ public class FightSceneGameHandler : MonoBehaviour
     private bool p1IsSpecialUsed = false;
     private bool p2IsSpecialUsed = false;
 
+    // audio player
+    public AudioSource audioPlayer;
+
+    // K.O. image
+    public Sprite koImage;
+    public GameObject koImageUI;
+    public AudioSource koPlayer;
+    public AudioClip koClip;
+
     void Awake()
     {
         isP1Ready();
@@ -76,9 +85,6 @@ public class FightSceneGameHandler : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(p1TriggerValue);
-        Debug.Log(p2TriggerValue);
-        Debug.Log(PlayerScript.isTurnOfP1);
         setSpecialBar();
         p1LockSpecialButton();
         p2LockSpecialButton();
@@ -131,16 +137,21 @@ public class FightSceneGameHandler : MonoBehaviour
     private void disableAllButtons()
     {
         stateOfButtons(false, false);
+        disableSpecial();
+    }
+
+    private void disableSpecial()
+    {
+        p1SBtn.interactable = false;
+        p2SBtn.interactable = false;
     }
 
     private void stateOfButtons(bool p1, bool p2)
     {
-        // p1SBtn.interactable = p1;
         p1LPBtn.interactable = p1;
         p1HPBtn.interactable = p1;
         p1LKBtn.interactable = p1;
         p1HKBtn.interactable = p1;
-        // p2SBtn.interactable = p2;
         p2LPBtn.interactable = p2;
         p2HPBtn.interactable = p2;
         p2LKBtn.interactable = p2;
@@ -428,21 +439,36 @@ public class FightSceneGameHandler : MonoBehaviour
     //win
     private void whoWillwin()
     {
-        if (PlayerScript.p2Health <= 0)
+        if (PlayerScript.p1Health <= 0 || PlayerScript.p2Health <= 0)
         {
             disableAllButtons();
-            StartCoroutine(goToFightScene(3));
-        }
-        else if (PlayerScript.p1Health <= 0)
-        {
-            disableAllButtons();
-            StartCoroutine(goToFightScene(3));
+            disableSpecial();
+            showKo();
+            StartCoroutine(goToWinningScene(3));
+            enabled = false;
         }
     }
 
-    IEnumerator goToFightScene(int scene)
+    private void showKo()
     {
-        yield return new WaitForSeconds(1f);
+        StartCoroutine(delayOnKo());
+    }
+
+    IEnumerator delayOnKo()
+    {
+        yield return new WaitForSeconds(0.7f);
+        koImageUI.gameObject.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+        koImageUI.gameObject.GetComponent<Image>().sprite = koImage;
+        koPlayer.PlayOneShot(koClip);
+    }
+
+    IEnumerator goToWinningScene(int scene)
+    {
+        for (float i = 100; i > 0; i--)
+        {
+            audioPlayer.volume = i / 100;
+        }
+        yield return new WaitForSeconds(6f);
         SceneManager.LoadScene(scene);
     }
 }

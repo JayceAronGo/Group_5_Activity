@@ -10,6 +10,7 @@ public class SelectionGameHandler : MonoBehaviour
     public TMP_InputField p1InputField;
     public TMP_InputField p2InputField;
     public GameObject healthText;
+    public AudioSource audioPlayer;
 
     void Start() { }
 
@@ -53,6 +54,10 @@ public class SelectionGameHandler : MonoBehaviour
 
     IEnumerator goToFightScene()
     {
+        for (float i = 100; i > 0; i--)
+        {
+            audioPlayer.volume = i / 100;
+        }
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(2);
     }
