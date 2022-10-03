@@ -322,7 +322,7 @@ MonoBehaviour:
   p2LowKickMissedVideo: {fileID: 32900000, guid: f432d56879b485a4696f7f0a23a417b2, type: 3}
   p2HighKickVideo: {fileID: 32900000, guid: d5ae13c5ba1afe143894994152f60c8f, type: 3}
   p2HighKickMissedVideo: {fileID: 32900000, guid: 577c0c53016f68b4c9520da0285fcdf5, type: 3}
-  p2SpecialVideo: {fileID: 0}
+  p2SpecialVideo: {fileID: 32900000, guid: a5918c1681f39a9479c1c4fd4b2db40a, type: 3}
   p1SBtn: {fileID: 370191581}
   p1LPBtn: {fileID: 862328883}
   p1HPBtn: {fileID: 1622690942}

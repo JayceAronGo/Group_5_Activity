@@ -418,7 +418,7 @@ public class FightSceneGameHandler : MonoBehaviour
         disableAllButtons();
         p2IsSpecialUsed = !p2IsSpecialUsed;
         P2RingFire.gameObject.GetComponent<Image>().color = new Color32(255, 255, 225, 0);
-        dealDamageToP1(PlayerScript.p1Health, 25, 90, 0.5f, p2LowPunchVideo, p2LowPunchMissedVideo);
+        dealDamageToP1(PlayerScript.p1Health, 25, 100, 4f, p2SpecialVideo, null);
     }
 
     public void p2LowPunch()
